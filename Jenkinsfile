@@ -19,7 +19,7 @@ pipeline {
         stage('Docker BnP') {
           steps {
             container('kaniko') {
-                sh '/kaniko/executor -f `pwd`/Dockerfile -c `pwd`
+                sh '/kaniko/executor -f $(pwd)/Dockerfile -c $(pwd)
                 --insecure --skip-tls-verify --cache=true
                 --destination=docker.io/sibh8/dsa-demo'
                 }
